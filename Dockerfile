@@ -1,6 +1,6 @@
 FROM shokohsc/alpine-s6
 
-ENV WORKDIR "/var/www/flask"
+ENV WORKDIR "/var/www/app"
 
 # install packages
 RUN \
@@ -22,6 +22,6 @@ RUN \
 ADD root/ /
 
 # ports and volumes
-VOLUME /var/www/flask
+VOLUME /var/www/app
 
 WORKDIR ${WORKDIR}
