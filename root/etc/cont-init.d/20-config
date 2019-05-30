@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+# permissions
+find /var/www -type d -path /var/www/flask -prune -o -print0 | xargs -0 chown app:app
+
+find /var/www -type d -path /var/www/flask  -prune -o -print0 | xargs -0 chmod g+w
+
+chmod -R 644 /etc/logrotate.d
