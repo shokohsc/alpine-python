@@ -5,6 +5,7 @@ ENV WORKDIR "/var/www/app"
 # install packages
 RUN \
  echo "**** install build packages ****" && \
+ apk update && \
  apk add --no-cache \
 	git \
 	libressl2.7-libssl \
