@@ -1,4 +1,4 @@
-FROM shokohsc/alpine-s6
+FROM shokohsc/alpine-s6:3.9
 
 ENV WORKDIR "/var/www/app"
 
