@@ -1,4 +1,5 @@
-FROM shokohsc/alpine-s6:3.9
+ARG FROM_TAG='latest'
+FROM shokohsc/alpine-s6:${FROM_TAG:-latest}
 
 ENV WORKDIR "/var/www/app"
 
@@ -8,9 +9,7 @@ RUN \
  apk update && \
  apk add --no-cache \
 	git \
-	libressl2.7-libssl \
 	logrotate \
-	openssl \
     python3 && \
  echo "**** fix logrotate ****" && \
  sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf
